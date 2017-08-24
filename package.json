@@ -1,0 +1,17 @@
+{
+  "name": "greetings-forms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}
