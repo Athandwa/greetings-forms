@@ -22,9 +22,20 @@ app.get("/",function(req,res) {
 });
 
 app.post("/",function(req,res){
-  var massage = "Hello " + req.body.name;
+  var greetedUser = req.body.name;
+  var language = req.body.language;
+  var greetMassage = "";
+  // var existingName = false;
+
+  if (language === "English") {
+      greetMassage = "Hello " + greetedUser;
+  }else if (language === "Afrikaans") {
+      greetMassage = "Halo " + greetedUser;
+  }else if (language === "Xhosa") {
+      greetMassage = "Molo " + greetedUser;
+  }
   res.render("home", {
-    display: massage
+    display: greetMassage
   });
 });
 
