@@ -21,6 +21,21 @@ app.get("/",function(req,res) {
   res.render("home");
 });
 
+var namesGreeted = [];
+
+app.get("/greeted",function(req,res) {
+  var greetedNames = req.body.greetedNames;
+
+    var greeted = [];
+    for (name in namesGreeted){
+      greeted.push(namesGreeted[name]);
+    }
+    console.log(namesGreeted);
+        greetedNames: greeted
+  res.render("greeted");
+});
+
+
 app.post("/",function(req,res){
   var greetedUser = req.body.name;
   var language = req.body.language;
