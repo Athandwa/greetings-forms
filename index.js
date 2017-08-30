@@ -36,7 +36,7 @@ app.get("/greeted",function(req,res) {
 });
 
 
-app.post("/home",function(req,res){
+app.post("/",function(req,res){
   var greetedUser = req.body.name;
   var language = req.body.language;
   var greetMassage = "";
