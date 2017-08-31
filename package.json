@@ -6,13 +6,23 @@
     "start": "node index.js",
     "test": "mocha"
   },
-  "author": "",
+  "author": "Lucky",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
-    "express-handlebars": "^3.0.0"
+    "express-handlebars": "^3.0.0",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.9"
   },
   "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Athandwa/greetings-forms.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Athandwa/greetings-forms/issues"
+  },
+  "homepage": "https://github.com/Athandwa/greetings-forms#readme",
   "description": ""
 }
