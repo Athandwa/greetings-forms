@@ -1,6 +1,8 @@
 const express = require('express');
 const exphbs = require("express-handlebars");
 const form = require('body-parser');
+const flash = require('express-flash');
+// const session = require('express-session');
 const mongoURL = process.env.MONGO_DB_URL || "mongodb://localhost/test";
 // const mongoUrl = "mongodb://localhost/test";
 const Models = require("./model");
@@ -26,12 +28,16 @@ app.get("/",function(req,res) {
 });
 
 var namesGreeted = [];
+var index = [];
 
 app.post("/",function(req,res){
   var greetedUser = req.body.name;
   var language = req.body.language;
   var greetMassage = "";
   // var existingName = false;
+  if (index.indexOf(greetedUser) === -1) {
+        index.push(greetedUser)
+    }
 
   if (language === "English") {
       greetMassage = "Hello " + greetedUser;
@@ -48,10 +54,10 @@ app.post("/",function(req,res){
 });
 
 app.get('/greeted', function(req, res) {
-
   // res.send(namesGreeted);
   res.render("greeted", {greeted: namesGreeted});
   console.log(namesGreeted);
+    greetMassage: index
 });
 var port = process.env.PORT || 3000;
 app.listen(port, function() {

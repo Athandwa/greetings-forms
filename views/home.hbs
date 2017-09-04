@@ -8,16 +8,16 @@
 
 <form action="" method="post">
   <div class="form">
-  <input type="text" name="name" value="" placeholder="Please Enter Name">
-  <button type="submit" class="greetButton" name="button">Greet</button>
+  <input type="text" name="name" value="" placeholder="Please Enter Name" required="">
+  <button type="submit" class="greetButton" name="button" require="">Greet</button>
       <label class="radioButton">
-          <input type="radio" class="languages" name="language" value="English"><b>English
+          <input type="radio" class="languages" name="language" value="English" required=""><b>English
       </label>
       <label class="radioButton">
-          <input type="radio" class="languages"name="language" value="Afrikaans"><b>Afrikaans</b>
+          <input type="radio" class="languages"name="language" value="Afrikaans" required=""><b>Afrikaans</b>
       </label>
       <label class="radioButton">
-          <input type="radio" class="languages" name="language" value="Xhosa"><b>Xhosa</b>
+          <input type="radio" class="languages" name="language" value="Xhosa" required=""><b>Xhosa</b>
       </label><br><br>
       <p class="display">{{display}}</p>
     </div>
