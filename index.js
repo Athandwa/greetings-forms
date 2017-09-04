@@ -6,6 +6,7 @@ const mongoUrl = "mongodb://localhost/test";
 const Models = require("./model");
 const models = Models(mongoUrl);
 
+
 var app = express();
 
 // setting rendering engine
