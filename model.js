@@ -11,4 +11,10 @@ module.exports = function (mongoURL) {
   return {
     Users
   }
+  //This saves the information you see within that Bee declaration
+  Users.save(function(error) {
+    if (error) {
+      console.error(error);
+    }
+  });
 }
