@@ -18,7 +18,9 @@ nav{
 	font-style: italic;
 	color: #CEF0D4;
 }
-
+li{
+	list-style: none;
+}
 .display{
 			 position: relative;
 			 font-size: 40px;

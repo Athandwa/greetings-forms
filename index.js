@@ -1,10 +1,10 @@
 const express = require('express');
 const exphbs = require("express-handlebars");
 const form = require('body-parser');
-
-const mongoUrl = "mongodb://localhost/test";
+const mongoURL = process.env.MONGO_DB_URL || "mongodb://localhost/test";
+// const mongoUrl = "mongodb://localhost/test";
 const Models = require("./model");
-const models = Models(mongoUrl);
+const models = Models(mongoURL);
 
 
 var app = express();
