@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 module.exports = function (mongoURL) {
   mongoose.connect(mongoURL);
   const greetSchema = mongoose.Schema({
-    name: String
+    name: String,
+    counter: Number
   })
   greetSchema.index({name: 1}, {unique: true})
   const Users = mongoose.model("Users", greetSchema)
@@ -11,10 +12,10 @@ module.exports = function (mongoURL) {
   return {
     Users
   }
-  //This saves the information you see within that Bee declaration
-  Users.save(function(error) {
-    if (error) {
-      console.error(error);
-    }
-  });
+  //This saves the data to the database
+  // Users.save(function(error) {
+  //   if (error) {
+  //     console.error(error);
+  //   }
+  // });
 }

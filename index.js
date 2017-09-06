@@ -30,14 +30,11 @@ app.get("/",function(req,res) {
 var namesGreeted = [];
 var index = [];
 
-app.post("/",function(req,res){
+app.post("/",function(req, res, next){
+
   var greetedUser = req.body.name;
   var language = req.body.language;
   var greetMassage = "";
-  // var existingName = false;
-  if (index.indexOf(greetedUser) === -1) {
-        index.push(greetedUser)
-    }
 
   if (language === "English") {
       greetMassage = "Hello " + greetedUser;
@@ -46,19 +43,51 @@ app.post("/",function(req,res){
   }else if (language === "Xhosa") {
       greetMassage = "Molo " + greetedUser;
   }
+models.Users.create({
+  name: greetedUser
+}, function (err, person) {
+  if (err) {
+    if (err.code === 11000) {
+      console.log("name already exist");
+    }
+    // return next(err)
+  }
+  else {
+    models.Users.find({}, function (err, results) {
+      if (err) {
+        return next(err);
+      }
+      else {
+        res.render("home", {
+          display: greetMassage,
+          counter: results.length
+        });
+        console.log(results.length);
 
-  namesGreeted.push(greetedUser);
-  res.render("home", {
-    display: greetMassage
+      }
+    })
+  }
+})
+  // namesGreeted.push(greetedUser);
+});
+
+app.get('/greeted', function(req, res, next) {
+  // res.send(namesGreeted);
+
+  models.Users.find({}, function(err, results) {
+   if (err) {
+     return next(err);
+   }
+   else {
+     res.render("greeted", {greeted: results});
+
+   }
+
+  console.log(namesGreeted);
   });
 });
 
-app.get('/greeted', function(req, res) {
-  // res.send(namesGreeted);
-  res.render("greeted", {greeted: namesGreeted});
-  console.log(namesGreeted);
-    greetMassage: index
-});
+
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
   console.log("Server running at http://localhost:"+port+"/");
