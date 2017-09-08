@@ -10,6 +10,10 @@ text-align: center;
 text-shadow: 1px 1px 2px #082b34;
 font-style: italic;
 }
+.errorMessage{
+	text-align: center;
+	color: red;
+}
 nav{
 	text-align: center;
 }
