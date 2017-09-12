@@ -53,9 +53,10 @@ app.get("/greeted/:name", function(req, res) {
         if (error) {
             console.log(error);
         } else if (results) {
-            console.log("results");
+            console.log(results);
             res.render("timesGreeted", {
-                name: results
+                name: results.name,
+                counter: results.counter
             })
         }
     })
@@ -75,13 +76,15 @@ app.post("/", function(req, res, next) {
         greetMassage = "Molo " + greetedUser;
     }
     models.Users.create({
-        name: greetedUser
+        name: greetedUser,
+        counter: 1
     }, function(err, person) {
         if (err) {
             if (err.code === 11000) {
                 req.flash("error", "Opps! The name already exist!");
             }
             res.redirect("/")
+
         } else {
             models.Users.find({}, function(err, results) {
                 if (err) {
@@ -90,7 +93,6 @@ app.post("/", function(req, res, next) {
                     res.render("home", {
                         display: greetMassage,
                         counter: results.length
-                        // counter: 1
                     });
                     console.log(results.length);
                 }
