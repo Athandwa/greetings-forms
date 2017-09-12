@@ -13,7 +13,7 @@ font-style: italic;
 .resetButton{
 	background-color: DarkRed ;
 	color: white;
-	margin-left: 46em;
+	/*margin-left: 46em;*/
 	height: 40px;
 	width: 60px;
 }

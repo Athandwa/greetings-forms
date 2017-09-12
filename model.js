@@ -12,10 +12,13 @@ module.exports = function (mongoURL) {
   return {
     Users
   }
-  //This saves the data to the database
-  // Users.save(function(error) {
-  //   if (error) {
-  //     console.error(error);
-  //   }
-  // });
+  // This saves the data to the database
+  Users.save(function(err, results) {
+    if (error) {
+      console.error(error);
+    }
+    else {
+      return results;
+    }
+  });
 }

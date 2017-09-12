@@ -59,7 +59,6 @@ app.get("/greeted/:name", function(req, res) {
             })
         }
     })
-    //  return {makho};
 })
 
 app.post("/", function(req, res, next) {
@@ -83,7 +82,6 @@ app.post("/", function(req, res, next) {
                 req.flash("error", "Opps! The name already exist!");
             }
             res.redirect("/")
-            // return next(err)
         } else {
             models.Users.find({}, function(err, results) {
                 if (err) {
@@ -92,14 +90,13 @@ app.post("/", function(req, res, next) {
                     res.render("home", {
                         display: greetMassage,
                         counter: results.length
+                        // counter: 1
                     });
                     console.log(results.length);
-
                 }
             })
         }
     })
-    // namesGreeted.push(greetedUser);
 });
 
 app.get('/greeted', function(req, res, next) {
@@ -114,8 +111,6 @@ app.get('/greeted', function(req, res, next) {
             });
 
         }
-
-        // console.log(namesGreeted);
     });
 });
 
@@ -128,7 +123,6 @@ app.post('/reset', function(req, res) {
         }
         res.render("home");
     })
-    //  return {lucky};
 });
 
 
