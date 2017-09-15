@@ -15,7 +15,7 @@
 
 <form action="" method="post">
   <div class="form">
-  <input type="text" name="name" value="" placeholder="Please Enter Name" required="">
+  <input type="text" name="name" value="" placeholder="Please Enter Name" required=""><br><br>
   <label class="radioButton">
           <input type="radio" class="languages" name="language" value="English" required=""><b>English
       </label>
@@ -25,13 +25,13 @@
       <label class="radioButton">
           <input type="radio" class="languages" name="language" value="Xhosa" required=""><b>Xhosa</b>
       </label><br><br>
-      <button type="submit" class="greetButton" name="button" require="">Greet</button><br><br>
-        <form action="/reset" method="post">
-          <button type="submit" class="resetButton" name="button">Reset</button>
-
-        </form>
+      <button type="submit" class="btn btn-outline-primary" name="" require="">Greet</button><br><br>
       <p class="display">{{display}}</p>
       <p class ="counter">{{counter}}</p>
     </div>
+</form>
+<form action="/reset" method="post">
+  <button type="submit" class="resetButton" name="button">Reset</button>
+
 </form>
 </div>

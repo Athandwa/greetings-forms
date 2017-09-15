@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({
 
 // parse application/json
 app.use(bodyParser.json());
+
 app.use(session({
     secret: 'keyboard cat',
     cookie: {
@@ -52,13 +53,15 @@ app.get("/greeted/:name", function(req, res) {
     }, function(error, results) {
         if (error) {
             console.log(error);
-        } else if (results) {
+        } else{
             console.log(results);
+            // results.save()
             res.render("timesGreeted", {
-                name: results.name,
-                counter: results.counter
-            })
-        }
+              name: results,
+              counter: results.counter
+        })
+      }
+
     })
 })
 
@@ -82,6 +85,16 @@ app.post("/", function(req, res, next) {
         if (err) {
             if (err.code === 11000) {
                 req.flash("error", "Opps! The name already exist!");
+                models.Users.findOne({name: greetedUser}, function (error, results) {
+                  if (error) {
+                    console.log(error);
+                  }
+                  else {
+                    results.counter++
+                    results.save()
+                    console.log(results.counter);
+                  }
+                })
             }
             res.redirect("/")
 
@@ -90,6 +103,7 @@ app.post("/", function(req, res, next) {
                 if (err) {
                     return next(err);
                 } else {
+                  // results.counter ++;
                     res.render("home", {
                         display: greetMassage,
                         counter: results.length

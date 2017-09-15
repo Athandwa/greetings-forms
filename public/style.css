@@ -98,20 +98,17 @@ header {
     margin-left: 0; }
   }
 
-/* Media Queries
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+	/*// Extra small devices (portrait phones, less than 576px)
+	// No media query since this is the default in Bootstrap*/
 
-/* Larger than mobile */
-@media (min-width: 400px) {}
+	/*// Small devices (landscape phones, 576px and up)*/
+	@media (min-width: 576px) { ... }
 
-/* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
+	/*// Medium devices (tablets, 768px and up)*/
+	@media (min-width: 768px) { ... }
 
-/* Larger than tablet */
-@media (min-width: 750px) {}
+	/*// Large devices (desktops, 992px and up)*/
+	@media (min-width: 992px) { ... }
 
-/* Larger than desktop */
-@media (min-width: 1000px) {}
-
-/* Larger than Desktop HD */
-@media (min-width: 1200px) {}
+	/*// Extra large devices (large desktops, 1200px and up)*/
+	@media (min-width: 1200px) { ... }
