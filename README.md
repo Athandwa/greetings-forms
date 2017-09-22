@@ -12,9 +12,13 @@
 
   - Configa Modules on Atom editor
 
-  - Connect to the database
+  - Connect to the database by istalling and using MongoDB with mangoose module.
 
-  - Register on MLAB for data
+  - Register on MLAB for data.
+  
+      - Create MongoDB connection URL configurable using an environment variable.
+      
+      - Add an Config `Variable` under the Settings tab. Enter a `key` and `value`.
 
   ## *Greetings Forms*
     
@@ -41,3 +45,9 @@
   - Each radio button needs a unique `value` attribute.
   
   - Use HTML form elements to be able create the web form.
+  
+  ## *Deploymenent*
+  
+  - Deploy the Applicaton usong `Heroku`
+  
+  
