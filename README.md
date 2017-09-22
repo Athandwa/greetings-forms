@@ -20,8 +20,16 @@
     
   - Create a route should be called /greetings and accepts the username as part of the URL.
   
-  - It should greet any user to use the route like this http://localhost:3000/greetings/Joe
+  - It should greet any user to use the route like this http://localhost:3000/greetings/Joe.
   
   - Create a route called /greeted that displays a list of all the users that have been greeted.
   
-  - Create a route called /counter/<USER_NAME> that shows how many times a user has been greeted
+  - Create a route called /counter/<USER_NAME> that shows how many times a user has been greeted.
+  
+  - Create a web form that allows you to enter a name and when the submit button is pressed display a greeting massage with a user entered on a text box.
+
+  - Create some basic styling to the page to look impresive.
+  
+  - Setup a folder for static resources using `express.static`.
+  
+  - Enable Form variables `body-parser` this enables form parameters retrieval using `req.body`.
