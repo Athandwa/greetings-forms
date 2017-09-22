@@ -19,6 +19,8 @@
       - Create MongoDB connection URL configurable using an environment variable.
       
       - Add an Config `Variable` under the Settings tab. Enter a `key` and `value`.
+      
+      - The key should be, MONGO_DB_URL the value should be something like, mongodb://<mongo_username>:<mongo_password>@yourinstance.mlab.com:62059/db-name
 
   ## *Greetings Forms*
     
