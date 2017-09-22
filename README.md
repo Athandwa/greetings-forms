@@ -33,3 +33,11 @@
   - Setup a folder for static resources using `express.static`.
   
   - Enable Form variables `body-parser` this enables form parameters retrieval using `req.body`.
+  
+  - Add radio buttons for the user to be greeted in different languages.
+
+  - The radio buttons needs the same `name` attribute to work together. 
+  
+  - Each radio button needs a unique `value` attribute.
+  
+  - Use HTML form elements to be able create the web form.
