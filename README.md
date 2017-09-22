@@ -52,4 +52,8 @@
   
   - Deploy the Applicaton usong `Heroku`
   
+ ## *Reset the Counter*
+ 
+  - Add a button to reset the greetings counter to 0.
+  
   
