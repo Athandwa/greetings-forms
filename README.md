@@ -14,14 +14,6 @@
 
   - Connect to the database by istalling and using MongoDB with mangoose module.
 
-  - Register on MLAB for data.
-  
-      - Create MongoDB connection URL configurable using an environment variable.
-      
-      - Add an Config `Variable` under the Settings tab. Enter a `key` and `value`.
-      
-      - The key should be, MONGO_DB_URL the value should be something like, mongodb://<mongo_username>:<mongo_password>@yourinstance.mlab.com:62059/db-name
-
   ## *Greetings Forms*
     
   - Create a route should be called /greetings and accepts the username as part of the URL.
@@ -51,6 +43,14 @@
   ## *Deploymenent*
   
   - Deploy the Applicaton usong `Heroku`
+  
+  - Register on MLAB for data.
+  
+      - Create MongoDB connection URL configurable using an environment variable.
+      
+      - Add an Config `Variable` under the Settings tab. Enter a `key` and `value`.
+      
+      - The key should be, MONGO_DB_URL the value should be something like, mongodb://<mongo_username>:<mongo_password>@yourinstance.mlab.com:62059/db-name
   
  ## *Reset the Counter*
  
